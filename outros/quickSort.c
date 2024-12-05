@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int const TAM = 20000;
+int const TAM = 50000;
 
 int partition(int v[], int baixo, int alto) {
     int pivot = v[alto]; 
@@ -11,7 +11,6 @@ int partition(int v[], int baixo, int alto) {
     for (int j = baixo; j < alto; j++) {
         if (v[j] <= pivot) {
             i++;
-            // Troca v[i] e v[j]
             int temp = v[i];
             v[i] = v[j];
             v[j] = temp;
@@ -27,10 +26,7 @@ int partition(int v[], int baixo, int alto) {
 
 void quickSort(int v[], int baixo, int alto) {
     if (baixo < alto) {
-        // Encontrar o índice de partição
         int pi = partition(v, baixo, alto);
-
-        // Ordenar os elementos antes e depois da partição
         quickSort(v, baixo, pi - 1);
         quickSort(v, pi + 1, alto);
     }
@@ -46,9 +42,9 @@ int main() {
         vetor[a] = rand() % TAM;
     }
 
-    t = clock(); //armazena tempo
+    t = clock();
     quickSort(vetor, 0, TAM - 1);
-    t = clock() - t; //tempo final - tempo
+    t = clock() - t;
 
     printf("Tempo de execucao: %lf ms\n", ((double)t)/((CLOCKS_PER_SEC/1000)));
 

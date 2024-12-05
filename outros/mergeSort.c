@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int const TAM = 20000;
+int const TAM = 50000;
 void merge(int v[], int esq, int meio, int dir) {
     int tam1 = meio - esq + 1;
     int tam2 = dir - meio;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int const TAM = 20000;
+int const TAM = 50000;
 
 void insertionSort(int v[TAM]) {
     int i, j, chave;

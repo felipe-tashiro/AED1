@@ -5,12 +5,17 @@
 int const TAM = 50000;
 
 void insertionSort(int v[TAM]) {
-    int i, j, x;
-    for (j = 1; j < TAM; j++) {
-        x = v[i];
-        for (i = j-1; i >= 0 && v[i] > x; i--)
-            v[i+1] = v[i];
-        v[i+1] = x;
+    int i, j, chave;
+    for (i = 1; i < TAM; i++) {
+        chave = v[i];
+        j = i - 1;
+
+        while (j >= 0 && v[j] > chave) {
+            v[j + 1] = v[j];
+            j = j - 1;
+        }
+
+        v[j + 1] = chave;
     }
 }
 
